@@ -9,4 +9,4 @@ before_install:
 
 # -- --coverage telling travis ci to automatically exit after finish
 script:
-  - docker run -e CI=true arpit/docker-react npm run test -- --coverage
+  - docker run -e CI=true arpit/docker-react npm run test
