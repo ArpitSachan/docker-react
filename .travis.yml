@@ -1,0 +1,12 @@
+sudo: required
+language: generic
+services:
+  - docker
+
+# before deploy or running tests
+before_install:
+  - docker build -t arpit/docker-react -f Dockerfile.dev .
+
+# -- --coverage telling travis ci to automatically exit after finish
+script:
+  - docker run -e CI=true arpit/docker-react npm run test -- --coverage
